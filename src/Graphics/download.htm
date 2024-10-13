@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html class=" responsive" lang="it">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="theme-color" content="#171a21">
+		<title>Workshop di Steam::[2024.1] Better ASDIC</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	
+	
+	<link href="https://community.akamai.steamstatic.com/public/shared/css/motiva_sans.css?v=-DH0xTYpnVe2&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/shared/css/buttons.css?v=PUJIfhtcQn7W&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/shared/css/shared_global.css?v=ezWS9te9Zwm9&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/css/globalv2.css?v=PAcV2zMBzzSV&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/shared/css/apphub.css?v=rWkM_-wRHqVk&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/css/skin_1/forums.css?v=t7cLY6KxagWC&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/css/skin_1/workshop.css?v=-GrgIn7gfr3W&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/css/skin_1/workshop_itemdetails.css?v=xHeTeKbgkgR6&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/css/skin_1/friendpicker.css?v=.WDBc9u4THCvp" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/css/skin_1/modalContent.css?v=.VpiwkLAYt9r1" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/shared/css/shared_responsive.css?v=sHIIcMzCffX6&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/shared/css/apphub_images.css?v=YSYBRzuK7chY&amp;l=italian" rel="stylesheet" type="text/css" >
+<link href="https://community.akamai.steamstatic.com/public/css/skin_1/header.css?v=NFoCa4OkAxRb&amp;l=italian" rel="stylesheet" type="text/css" >
+<script type="text/javascript">
+	var __PrototypePreserve=[];
+	__PrototypePreserve[0] = Array.from;
+	__PrototypePreserve[1] = Array.prototype.filter;
+	__PrototypePreserve[2] = Array.prototype.flatMap;
+	__PrototypePreserve[3] = Array.prototype.find;
+	__PrototypePreserve[4] = Array.prototype.some;
+	__PrototypePreserve[5] = Function.prototype.bind;
+	__PrototypePreserve[6] = HTMLElement.prototype.scrollTo;
+</script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/prototype-1.7.js?v=.55t44gwuwgvw" ></script>
+<script type="text/javascript">
+	Array.from = __PrototypePreserve[0] || Array.from;
+	Array.prototype.filter = __PrototypePreserve[1] || Array.prototype.filter;
+	Array.prototype.flatMap = __PrototypePreserve[2] || Array.prototype.flatMap;
+	Array.prototype.find = __PrototypePreserve[3] || Array.prototype.find;
+	Array.prototype.some = __PrototypePreserve[4] || Array.prototype.some;
+	Function.prototype.bind = __PrototypePreserve[5] || Function.prototype.bind;
+	HTMLElement.prototype.scrollTo = __PrototypePreserve[6] || HTMLElement.prototype.scrollTo;
+</script>
+<script type="text/javascript">VALVE_PUBLIC_PATH = "https:\/\/community.akamai.steamstatic.com\/public\/";</script><script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/scriptaculous/_combined.js?v=OeNIgrpEF8tL&amp;l=italian&amp;load=effects,controls,slider,dragdrop" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/global.js?v=dcgUDizGX9ft&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/jquery-1.11.1.min.js?v=.isFTSRckeNhC" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/shared/javascript/tooltip.js?v=.zYHOpI1L3Rt0" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/shared/javascript/shared_global.js?v=iz12XKlj5EBL&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/shared/javascript/auth_refresh.js?v=WgUxSlKTb3W1&amp;l=italian" ></script>
+<script type="text/javascript">Object.seal && [ Object, Array, String, Number ].map( function( builtin ) { Object.seal( builtin.prototype ); } );</script><script type="text/javascript">$J = jQuery.noConflict();
+if ( typeof JSON != 'object' || !JSON.stringify || !JSON.parse ) { document.write( "<scr" + "ipt type=\"text\/javascript\" src=\"https:\/\/community.akamai.steamstatic.com\/public\/javascript\/json2.js?v=pmScf4470EZP&amp;l=italian\" ><\/script>\n" ); };
+</script>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function(event) {
+				SetupTooltips( { tooltipCSSClass: 'community_tooltip'} );
+		});
+		</script><script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/modalv2.js?v=dfMhuy-Lrpyo&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/workshop_functions.js?v=FK6rkwbsxMey&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/sharedfiles_functions_logged_out.js?v=.haFgIE0aMxHR" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/workshop_previewplayer.js?v=gFYBjUII5a9q&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/applications/community/localization/loyaltyrewards_manifest.js?v=1h1skVxIxn3Z&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/shared/javascript/shared_responsive_adapter.js?v=Ow4Ng--cUUgW&amp;l=italian" ></script>
+
+						<meta name="twitter:card" content="summary_large_image">
+			
+	<meta name="twitter:site" content="@steam" />
+
+						<meta property="og:title" content="Workshop di Steam::[2024.1] Better ASDIC">
+					<meta property="twitter:title" content="Workshop di Steam::[2024.1] Better ASDIC">
+					<meta property="og:type" content="website">
+					<meta property="fb:app_id" content="105386699540688">
+			
+	
+			<link rel="image_src" href="https://steamuserimages-a.akamaihd.net/ugc/1835782295716737450/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false">
+		<meta property="og:image" content="https://steamuserimages-a.akamaihd.net/ugc/1835782295716737450/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false">
+		<meta name="twitter:image" content="https://steamuserimages-a.akamaihd.net/ugc/1835782295716737450/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" />
+				
+	
+	
+	
+	
+	</head>
+<body class="flat_page responsive_page ">
+
+
+<div class="responsive_page_frame with_header">
+						<div role="navigation" class="responsive_page_menu_ctn mainmenu" aria-label="Menu per dispositivi mobili">
+				<div class="responsive_page_menu"  id="responsive_page_menu">
+										<div class="mainmenu_contents">
+						<div class="mainmenu_contents_items">
+															<a class="menuitem" href="https://steamcommunity.com/login/home/?goto=sharedfiles%2Ffiledetails%2F%3Fid%3D2744782412">
+									Accedi								</a>
+															<a class="menuitem supernav" href="https://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Store">
+				Negozio			</a>
+			<div class="submenu_Store" style="display: none;" data-submenuid="Store">
+														<a class="submenuitem" href="https://store.steampowered.com/">
+						Pagina principale											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/explore/">
+						Elenco scoperte											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/my/wishlist/">
+						Lista dei desideri											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/points/shop/">
+						Negozio dei punti											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/news/">
+						Notizie											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/stats/">
+						Statistiche											</a>
+							</div>
+										<a class="menuitem supernav supernav_active" href="https://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Community">
+				Comunità			</a>
+			<div class="submenu_Community" style="display: none;" data-submenuid="Community">
+														<a class="submenuitem" href="https://steamcommunity.com/">
+						Home											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/discussions/">
+						Discussioni											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/workshop/">
+						Workshop											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/market/">
+						Mercato											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/?subsection=broadcasts">
+						Trasmissioni											</a>
+							</div>
+										<a class="menuitem " href="https://store.steampowered.com/about/">
+				Informazioni			</a>
+										<a class="menuitem " href="https://help.steampowered.com/it/">
+				Assistenza			</a>
+			
+							<div class="minor_menu_items">
+																								<div class="menuitem change_language_action">
+									Cambia la lingua								</div>
+																																	<a class="menuitem" href="https://store.steampowered.com/mobile" target="_blank" rel="noreferrer">Ottieni l'app mobile di Steam</a>
+																									<div class="menuitem" onclick="Responsive_RequestDesktopView();">
+										Visualizza il sito web per desktop									</div>
+															</div>
+						</div>
+						<div class="mainmenu_footer_spacer  "></div>
+						<div class="mainmenu_footer">
+															<div class="mainmenu_footer_logo"><img src="https://community.akamai.steamstatic.com/public/shared/images/responsive/logo_valve_footer.png"></div>
+								© Valve Corporation. Tutti i diritti riservati. Tutti i marchi appartengono ai rispettivi proprietari negli Stati Uniti e in altri Paesi.								<span class="mainmenu_valve_links">
+									<a href="https://store.steampowered.com/privacy_agreement/" target="_blank">Informativa sulla privacy</a>
+									&nbsp;| &nbsp;<a href="http://www.valvesoftware.com/legal.htm" target="_blank">Informazioni legali</a>
+									&nbsp;| &nbsp;<a href="https://store.steampowered.com/subscriber_agreement/" target="_blank">Contratto di sottoscrizione a Steam</a>
+									&nbsp;| &nbsp;<a href="https://store.steampowered.com/steam_refunds/" target="_blank">Rimborsi</a>
+								</span>
+													</div>
+					</div>
+									</div>
+			</div>
+		
+		<div class="responsive_local_menu_tab"></div>
+
+		<div class="responsive_page_menu_ctn localmenu">
+			<div class="responsive_page_menu"  id="responsive_page_local_menu" data-panel="{&quot;onOptionsActionDescription&quot;:&quot;#filter_toggle&quot;,&quot;onOptionsButton&quot;:&quot;Responsive_ToggleLocalMenu()&quot;,&quot;onCancelButton&quot;:&quot;Responsive_ToggleLocalMenu()&quot;}">
+				<div class="localmenu_content" data-panel="{&quot;maintainY&quot;:true,&quot;bFocusRingRoot&quot;:true,&quot;flow-children&quot;:&quot;column&quot;}">
+				</div>
+			</div>
+		</div>
+
+
+
+					<div class="responsive_header">
+				<div class="responsive_header_content">
+					<div id="responsive_menu_logo">
+						<img src="https://community.akamai.steamstatic.com/public/shared/images/responsive/header_menu_hamburger.png" height="100%">
+											</div>
+					<div class="responsive_header_logo">
+						<a href="https://store.steampowered.com/">
+															<img src="https://community.akamai.steamstatic.com/public/shared/images/responsive/header_logo.png" height="36" border="0" alt="STEAM">
+													</a>
+					</div>
+				</div>
+			</div>
+		
+		<div class="responsive_page_content_overlay">
+
+		</div>
+
+		<div class="responsive_fixonscroll_ctn nonresponsive_hidden ">
+		</div>
+	
+	<div class="responsive_page_content">
+
+		<div role="banner" id="global_header" data-panel="{&quot;flow-children&quot;:&quot;row&quot;}">
+	<div class="content">
+		<div class="logo">
+			<span id="logo_holder">
+									<a href="https://store.steampowered.com/" aria-label="Link della pagina iniziale di Steam">
+						<img src="https://community.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" width="176" height="44" alt="Link della pagina iniziale di Steam">
+					</a>
+							</span>
+		</div>
+
+			<div role="navigation" class="supernav_container" aria-label="Menu globale">
+								<a class="menuitem supernav" href="https://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Store">
+				NEGOZIO			</a>
+			<div class="submenu_Store" style="display: none;" data-submenuid="Store">
+														<a class="submenuitem" href="https://store.steampowered.com/">
+						Pagina principale											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/explore/">
+						Elenco scoperte											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/my/wishlist/">
+						Lista dei desideri											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/points/shop/">
+						Negozio dei punti											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/news/">
+						Notizie											</a>
+														<a class="submenuitem" href="https://store.steampowered.com/stats/">
+						Statistiche											</a>
+							</div>
+										<a class="menuitem supernav supernav_active" href="https://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_Community">
+				COMUNITÀ			</a>
+			<div class="submenu_Community" style="display: none;" data-submenuid="Community">
+														<a class="submenuitem" href="https://steamcommunity.com/">
+						Home											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/discussions/">
+						Discussioni											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/workshop/">
+						Workshop											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/market/">
+						Mercato											</a>
+														<a class="submenuitem" href="https://steamcommunity.com/?subsection=broadcasts">
+						Trasmissioni											</a>
+							</div>
+										<a class="menuitem " href="https://store.steampowered.com/about/">
+				Informazioni			</a>
+										<a class="menuitem " href="https://help.steampowered.com/it/">
+				ASSISTENZA			</a>
+				</div>
+	<script type="text/javascript">
+		jQuery(function($) {
+			$('#global_header .supernav').v_tooltip({'location':'bottom', 'destroyWhenDone': false, 'tooltipClass': 'supernav_content', 'offsetY':-6, 'offsetX': 1, 'horizontalSnap': 4, 'tooltipParent': '#global_header .supernav_container', 'correctForScreenSize': false});
+		});
+	</script>
+
+		<div id="global_actions">
+			<div role="navigation" id="global_action_menu" aria-label="Menu dell'account">
+									<a class="header_installsteam_btn header_installsteam_btn_green" href="https://store.steampowered.com/about/">
+						<div class="header_installsteam_btn_content">
+							Installa Steam						</div>
+					</a>
+				
+				
+									<a class="global_action_link" href="https://steamcommunity.com/login/home/?goto=sharedfiles%2Ffiledetails%2F%3Fid%3D2744782412">Accedi</a>
+											&nbsp;|&nbsp;
+						<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">Lingua</span>
+						<div class="popup_block_new" id="language_dropdown" style="display: none;">
+							<div class="popup_body popup_menu">
+																																					<a class="popup_menu_item tight" href="?l=schinese&id=2744782412" onclick="ChangeLanguage( 'schinese' ); return false;">简体中文 (cinese semplificato)</a>
+																													<a class="popup_menu_item tight" href="?l=tchinese&id=2744782412" onclick="ChangeLanguage( 'tchinese' ); return false;">繁體中文 (cinese tradizionale)</a>
+																													<a class="popup_menu_item tight" href="?l=japanese&id=2744782412" onclick="ChangeLanguage( 'japanese' ); return false;">日本語 (giapponese)</a>
+																													<a class="popup_menu_item tight" href="?l=koreana&id=2744782412" onclick="ChangeLanguage( 'koreana' ); return false;">한국어 (coreano)</a>
+																													<a class="popup_menu_item tight" href="?l=thai&id=2744782412" onclick="ChangeLanguage( 'thai' ); return false;">ไทย (tailandese)</a>
+																													<a class="popup_menu_item tight" href="?l=bulgarian&id=2744782412" onclick="ChangeLanguage( 'bulgarian' ); return false;">Български (bulgaro)</a>
+																													<a class="popup_menu_item tight" href="?l=czech&id=2744782412" onclick="ChangeLanguage( 'czech' ); return false;">Čeština (ceco)</a>
+																													<a class="popup_menu_item tight" href="?l=danish&id=2744782412" onclick="ChangeLanguage( 'danish' ); return false;">Dansk (danese)</a>
+																													<a class="popup_menu_item tight" href="?l=german&id=2744782412" onclick="ChangeLanguage( 'german' ); return false;">Deutsch (tedesco)</a>
+																													<a class="popup_menu_item tight" href="?l=english&id=2744782412" onclick="ChangeLanguage( 'english' ); return false;">English (inglese)</a>
+																													<a class="popup_menu_item tight" href="?l=spanish&id=2744782412" onclick="ChangeLanguage( 'spanish' ); return false;">Español - España (spagnolo - Spagna)</a>
+																													<a class="popup_menu_item tight" href="?l=latam&id=2744782412" onclick="ChangeLanguage( 'latam' ); return false;">Español - Latinoamérica (spagnolo dell'America Latina)</a>
+																													<a class="popup_menu_item tight" href="?l=greek&id=2744782412" onclick="ChangeLanguage( 'greek' ); return false;">Ελληνικά (greco)</a>
+																													<a class="popup_menu_item tight" href="?l=french&id=2744782412" onclick="ChangeLanguage( 'french' ); return false;">Français (francese)</a>
+																																							<a class="popup_menu_item tight" href="?l=indonesian&id=2744782412" onclick="ChangeLanguage( 'indonesian' ); return false;">Indonesiano</a>
+																													<a class="popup_menu_item tight" href="?l=hungarian&id=2744782412" onclick="ChangeLanguage( 'hungarian' ); return false;">Magyar (ungherese)</a>
+																													<a class="popup_menu_item tight" href="?l=dutch&id=2744782412" onclick="ChangeLanguage( 'dutch' ); return false;">Nederlands (olandese)</a>
+																													<a class="popup_menu_item tight" href="?l=norwegian&id=2744782412" onclick="ChangeLanguage( 'norwegian' ); return false;">Norsk (norvegese)</a>
+																													<a class="popup_menu_item tight" href="?l=polish&id=2744782412" onclick="ChangeLanguage( 'polish' ); return false;">Polski (polacco)</a>
+																													<a class="popup_menu_item tight" href="?l=portuguese&id=2744782412" onclick="ChangeLanguage( 'portuguese' ); return false;">Português (portoghese - Portogallo)</a>
+																													<a class="popup_menu_item tight" href="?l=brazilian&id=2744782412" onclick="ChangeLanguage( 'brazilian' ); return false;">Português - Brasil (portoghese brasiliano)</a>
+																													<a class="popup_menu_item tight" href="?l=romanian&id=2744782412" onclick="ChangeLanguage( 'romanian' ); return false;">Română (rumeno)</a>
+																													<a class="popup_menu_item tight" href="?l=russian&id=2744782412" onclick="ChangeLanguage( 'russian' ); return false;">Русский (russo)</a>
+																													<a class="popup_menu_item tight" href="?l=finnish&id=2744782412" onclick="ChangeLanguage( 'finnish' ); return false;">Suomi (finlandese)</a>
+																													<a class="popup_menu_item tight" href="?l=swedish&id=2744782412" onclick="ChangeLanguage( 'swedish' ); return false;">Svenska (svedese)</a>
+																													<a class="popup_menu_item tight" href="?l=turkish&id=2744782412" onclick="ChangeLanguage( 'turkish' ); return false;">Türkçe (turco)</a>
+																													<a class="popup_menu_item tight" href="?l=vietnamese&id=2744782412" onclick="ChangeLanguage( 'vietnamese' ); return false;">Tiếng Việt (vietnamita)</a>
+																													<a class="popup_menu_item tight" href="?l=ukrainian&id=2744782412" onclick="ChangeLanguage( 'ukrainian' ); return false;">Українська (ucraino)</a>
+																									<a class="popup_menu_item tight" href="https://www.valvesoftware.com/en/contact?contact-person=Translation%20Team%20Feedback" target="_blank">Segnala un problema nella traduzione</a>
+							</div>
+						</div>
+												</div>
+					</div>
+			</div>
+</div>
+<script type="text/javascript">
+	g_sessionID = "7d262d5edb73f3c1521f4ff2";
+	g_steamID = false;
+	g_strLanguage = "italian";
+	g_SNR = '2_100100_100101_100103';
+	g_bAllowAppImpressions = false;
+		g_ContentDescriptorPreferences = [1,3,4];
+
+			$J( function() { InitCookiePreferencesPopup() } );
+	
+
+	// We always want to have the timezone cookie set for PHP to use
+	setTimezoneCookies();
+
+	$J( function() {
+
+		InitMiniprofileHovers(( 'https%3A%2F%2Fsteamcommunity.com' ));
+		InitEmoticonHovers();
+		ApplyAdultContentPreferences();
+	});
+
+	$J( function() { InitEconomyHovers( "https:\/\/community.akamai.steamstatic.com\/public\/css\/skin_1\/economy.css?v=W1lpCYkssBMO&l=italian", "https:\/\/community.akamai.steamstatic.com\/public\/javascript\/economy_common.js?v=tsXdRVB0yEaR&l=italian", "https:\/\/community.akamai.steamstatic.com\/public\/javascript\/economy.js?v=FUNsfj6Geqkd&l=italian" );});</script>
+<div id="application_config" style="display: none;"  data-config="{&quot;EUNIVERSE&quot;:1,&quot;WEB_UNIVERSE&quot;:&quot;public&quot;,&quot;LANGUAGE&quot;:&quot;italian&quot;,&quot;COUNTRY&quot;:&quot;IT&quot;,&quot;MEDIA_CDN_COMMUNITY_URL&quot;:&quot;https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/&quot;,&quot;MEDIA_CDN_URL&quot;:&quot;https:\/\/cdn.akamai.steamstatic.com\/&quot;,&quot;VIDEO_CDN_URL&quot;:&quot;https:\/\/video.akamai.steamstatic.com\/&quot;,&quot;COMMUNITY_CDN_URL&quot;:&quot;https:\/\/community.akamai.steamstatic.com\/&quot;,&quot;COMMUNITY_CDN_ASSET_URL&quot;:&quot;https:\/\/cdn.akamai.steamstatic.com\/steamcommunity\/public\/assets\/&quot;,&quot;STORE_CDN_URL&quot;:&quot;https:\/\/store.akamai.steamstatic.com\/&quot;,&quot;PUBLIC_SHARED_URL&quot;:&quot;https:\/\/community.akamai.steamstatic.com\/public\/shared\/&quot;,&quot;COMMUNITY_BASE_URL&quot;:&quot;https:\/\/steamcommunity.com\/&quot;,&quot;CHAT_BASE_URL&quot;:&quot;https:\/\/steamcommunity.com\/&quot;,&quot;STORE_BASE_URL&quot;:&quot;https:\/\/store.steampowered.com\/&quot;,&quot;STORE_CHECKOUT_BASE_URL&quot;:&quot;https:\/\/checkout.steampowered.com\/&quot;,&quot;IMG_URL&quot;:&quot;https:\/\/community.akamai.steamstatic.com\/public\/images\/&quot;,&quot;STEAMTV_BASE_URL&quot;:&quot;https:\/\/steam.tv\/&quot;,&quot;HELP_BASE_URL&quot;:&quot;https:\/\/help.steampowered.com\/&quot;,&quot;PARTNER_BASE_URL&quot;:&quot;https:\/\/partner.steamgames.com\/&quot;,&quot;STATS_BASE_URL&quot;:&quot;https:\/\/partner.steampowered.com\/&quot;,&quot;INTERNAL_STATS_BASE_URL&quot;:&quot;https:\/\/steamstats.valve.org\/&quot;,&quot;IN_CLIENT&quot;:false,&quot;USE_POPUPS&quot;:false,&quot;STORE_ICON_BASE_URL&quot;:&quot;https:\/\/shared.akamai.steamstatic.com\/store_item_assets\/steam\/apps\/&quot;,&quot;WEBAPI_BASE_URL&quot;:&quot;https:\/\/api.steampowered.com\/&quot;,&quot;TOKEN_URL&quot;:&quot;https:\/\/steamcommunity.com\/chat\/clientjstoken&quot;,&quot;BUILD_TIMESTAMP&quot;:1728687263,&quot;PAGE_TIMESTAMP&quot;:1728836100,&quot;IN_TENFOOT&quot;:false,&quot;IN_GAMEPADUI&quot;:false,&quot;IN_CHROMEOS&quot;:false,&quot;IN_MOBILE_WEBVIEW&quot;:false,&quot;PLATFORM&quot;:&quot;windows&quot;,&quot;BASE_URL_STORE_CDN_ASSETS&quot;:&quot;https:\/\/cdn.akamai.steamstatic.com\/store\/&quot;,&quot;EREALM&quot;:1,&quot;LOGIN_BASE_URL&quot;:&quot;https:\/\/login.steampowered.com\/&quot;,&quot;AVATAR_BASE_URL&quot;:&quot;https:\/\/avatars.akamai.steamstatic.com\/&quot;,&quot;FROM_WEB&quot;:true,&quot;WEBSITE_ID&quot;:&quot;Community&quot;,&quot;BASE_URL_SHARED_CDN&quot;:&quot;https:\/\/shared.akamai.steamstatic.com\/&quot;,&quot;CLAN_CDN_ASSET_URL&quot;:&quot;https:\/\/clan.akamai.steamstatic.com\/&quot;,&quot;SNR&quot;:&quot;2_100100_100101_100103&quot;}" data-userinfo="[]" data-community="[]" data-loyaltystore="{&quot;webapi_token&quot;:&quot;&quot;}" data-steam_notifications="null"></div><link href="https://community.akamai.steamstatic.com/public/css/applications/community/main.css?v=2Ih2WOq7ErXY&amp;l=italian" rel="stylesheet" type="text/css" >
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/applications/community/manifest.js?v=hgPi_0N-057K&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/applications/community/libraries~b28b7af69.js?v=KwNbKLgEHlA9&amp;l=italian" ></script>
+<script type="text/javascript" src="https://community.akamai.steamstatic.com/public/javascript/applications/community/main.js?v=bz0kMfQAOX6m&amp;l=italian" ></script>
+	<div id="application_root"></div>
+
+		<div role="main" class="responsive_page_template_content" id="responsive_page_template_content" data-panel="{&quot;autoFocus&quot;:true}" >
+
+			
+<script type="text/javascript">
+
+		var bSkipVideos = true;
+		var SESSION_ID = '7d262d5edb73f3c1521f4ff2';
+	var publishedfileid = '2744782412';
+	var searchText = "";
+
+	function onModalHidden()
+	{
+		// stop any videos
+		if ( window.stop )
+		{
+			stop();
+		}
+	}
+
+	function previewImageBind()
+	{
+		Event.observe( 'enlargedImage', 'load', function() { modalSizing( $( 'previewImageEnlarged' ) ); } );
+	}
+
+	window.onload = previewImageBind;
+
+	var gGreenlightAcceptedRedirectDialog = null;
+
+	function RequestSketchfabDetails( previewID, modelID )
+	{
+		var elem = $("thumb_sketchfab_model_" + previewID );
+		var img = elem.down( '.thumb_sketchfab_img' );
+		$J.get( "https://steamcommunity.com/sharedfiles/ajaxgetsketchfabdetails/",
+			{ modelid: modelID }
+		).done(
+			function( json ) {
+				img.src = json.thumbnail_url;
+			}
+		)
+	}
+
+	Event.observe(document, 'dom:loaded', function() {
+		if( searchText )
+			HighlightSearchText( searchText, $('highlightContent') );
+
+		if ( $J("#GreenlightItemReleasedDialog" ).length > 0 )
+		{
+			$J("#GreenlightItemReleasedDialog").show();
+			gGreenlightAcceptedRedirectDialog = ShowDialog( 'Disponibile su Steam!', $J("#GreenlightItemReleasedDialog" ), null );
+			gGreenlightAcceptedRedirectDialog.SetRemoveContentOnDismissal( false );
+		}
+
+			});
+
+	function CloseGreenlightAcceptedRedirectDialog()
+	{
+		gGreenlightAcceptedRedirectDialog.Dismiss();
+		gGreenlightAcceptedRedirectDialog = null;
+	}
+
+	$J(function() {
+
+
+		var tag = document.createElement('script');
+
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	});
+
+    g_HighlightPlayer = null;
+
+	function onYouTubeIframeAPIReady()
+	{
+        g_HighlightPlayer = new HighlightPlayer( {
+			elemPlayerArea: 'highlight_player_area',
+			elemStrip: 'highlight_strip',
+			elemStripScroll: 'highlight_strip_scroll',
+			elemSlider: 'highlight_slider',
+			rgMovieFlashvars: rgMovieFlashvars,
+			rgScreenshotURLs: rgScreenshotURLs,
+			rgFullScreenshotURLs: rgFullScreenshotURLs,
+			rgSketchfabModels : rgSketchfabModels,
+			rgDefaultMovieFlashvars: rgCommonFlashVars
+		} );
+	}
+
+
+</script>
+
+	<div id="ig_bottom" class="smallheader item">
+	
+
+<div class="apphub_HomeHeaderContent">
+
+
+	<script lang="js">
+		const g_bIsAppHubModerator = 0;
+	</script>
+
+	
+	
+	<div class="apphub_HeaderTop workshop">
+		<div class="apphub_OtherSiteInfo responsive_hidden">
+							<div class="apphub_WorkshopPistonHolder">
+					<div class="apphub_WorkshopPiston"></div>
+				</div>
+				
+							<a style="position: relative; z-index: 1;" class="btnv6_blue_hoverfade btn_medium" href="https://store.steampowered.com/app/494840?snr=2_100100_100101_100103_apphubheader" data-appid="494840">
+					<span>Pagina del Negozio</span>
+				</a>
+					</div>
+		<div class="apphub_AppDetails">
+			<div class="apphub_AppIcon"><img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/494840/456cd3ff98511c5874d3cb2492e0db1019610767.jpg"><div class="overlay"></div></div>
+			<div class="apphub_AppName ellipsis">UBOAT</div>
+		</div>
+		<div style="clear: both"></div>
+
+		
+				<div data-panel="{&quot;maintainX&quot;:true,&quot;bFocusRingRoot&quot;:true,&quot;flow-children&quot;:&quot;row&quot;}" class="apphub_sectionTabs responsive_hidden">
+				
+	<a href="https://steamcommunity.com/app/494840" class="apphub_sectionTab  "><span>Tutto</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/discussions/" class="apphub_sectionTab  "><span>Discussioni</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/screenshots/" class="apphub_sectionTab  "><span>Screenshot</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/images/" class="apphub_sectionTab  "><span>Immagini</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/broadcasts/" class="apphub_sectionTab  "><span>Trasmissioni</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/videos/" class="apphub_sectionTab  "><span>Video</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/workshop/" class="apphub_sectionTab active "><span>Workshop</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/allnews/" class="apphub_sectionTab  "><span>Notizie</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/guides/" class="apphub_sectionTab  "><span>Guide</span></a>
+		
+	<a href="https://steamcommunity.com/app/494840/reviews/" class="apphub_sectionTab  "><span>Recensioni</span></a>
+				<div style="clear: left"></div>
+		</div>
+
+		<div class="nonresponsive_hidden responsive_tab_ctn sharedfiles_responsive_tab">
+			<div class="responsive_tab_control">
+				<div class="responsive_tab_control_inner">
+										<select class="responsive_tab_select" id="responsive_tab_select670bf204a164c">
+													<option value="https://steamcommunity.com/app/494840" >
+								Tutto							</option>
+													<option value="https://steamcommunity.com/app/494840/discussions/" >
+								Discussioni							</option>
+													<option value="https://steamcommunity.com/app/494840/screenshots/" >
+								Screenshot							</option>
+													<option value="https://steamcommunity.com/app/494840/images/" >
+								Immagini							</option>
+													<option value="https://steamcommunity.com/app/494840/broadcasts/" >
+								Trasmissioni							</option>
+													<option value="https://steamcommunity.com/app/494840/videos/" >
+								Video							</option>
+													<option value="https://steamcommunity.com/app/494840/workshop/" selected>
+								Workshop							</option>
+													<option value="https://steamcommunity.com/app/494840/allnews/" >
+								Notizie							</option>
+													<option value="https://steamcommunity.com/app/494840/guides/" >
+								Guide							</option>
+													<option value="https://steamcommunity.com/app/494840/reviews/" >
+								Recensioni							</option>
+											</select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="responsive_tab_baseline nonresponsive_hidden"></div>
+	<div class="apphub_sectionTabsHR responsive_hidden"></div>
+
+
+	<!-- these elements are used to populate the local menu on responsive pages -->
+	<div style="display: none;">
+		<div class="responsive_local_menu apphub_responsive_menu">
+			<h3 class="ellipsis apphub_responsive_menu_title">UBOAT</h3>
+			<div class="apphub_ResponsiveMenuCtn">
+									<a style="position: relative; z-index: 1;" class="btnv6_blue_hoverfade btn_medium" href="https://store.steampowered.com/app/494840">
+						<span>Pagina del Negozio</span>
+					</a>
+											</div>
+								</div>
+	</div>
+	<!-- end responsive menu -->
+
+	
+</div>
+
+	<div class="apphub_HeaderBottomBG_ctn">
+		<div class="apphub_HeaderBottomBG_blur"></div><div class="apphub_HeaderBottomBG"  ></div>
+	</div>
+	<div class="breadcrumbs">
+								<a data-panel="{&quot;noFocusRing&quot;:true}" href="https://steamcommunity.com/app/494840">UBOAT</a><span class="breadcrumb_separator">&nbsp;&gt;&nbsp;</span>
+					
+                    <a data-panel="{&quot;noFocusRing&quot;:true}" href="https://steamcommunity.com/app/494840/workshop/">Workshop</a>
+                    <span class="breadcrumb_separator">&gt;&nbsp;</span><a data-panel="{&quot;noFocusRing&quot;:true}" href="https://steamcommunity.com/profiles/76561198326762641/myworkshopfiles/?appid=494840">Workshop di Wangtze</a>
+                	</div>
+<!-- main body -->
+<div id="mainContents">
+
+			<div class="bannedNotification" id="bannedNotification" style="display: none" >
+			Questo oggetto è stato rimosso dalla Comunità poiché viola le linee guida dei contenuti e della Comunità di Steam. Solo tu puoi visualizzarlo. Se credi che il tuo oggetto sia stato rimosso per errore, contatta l'<a href="https://help.steampowered.com/it/wizard/HelpWithSteamIssue/?issueid=415" target="_blank" rel="" >Assistenza di Steam</a>.					</div>
+		<div class="incompatibleNotification" id="incompatibleNotification" style="display: none" >
+							Questo oggetto non è compatibile con UBOAT. Consulta le <a href="https://steamcommunity.com">istruzioni</a> per capire perchè questo oggetto potrebbe non funzionare in UBOAT.					</div>
+
+		
+		
+		
+		
+		
+
+		
+				<div class="workshopItemDetailsHeader">
+			<div id="detailsHeaderRight">
+				<!-- top level info -->
+								<div class="ratingSection">
+					<div class="fileRatingDetails"><img src="https://community.akamai.steamstatic.com/public/images/sharedfiles/4-star_large.png?v=2" /></div>
+					<div class="numRatings">47 voti</div>				</div>
+							</div>
+			<div class="workshopItemTitle">[2024.1] Better ASDIC</div>
+			<div style="clear:both"></div>
+		</div>
+	<div data-panel="{&quot;maintainX&quot;:true,&quot;bFocusRingRoot&quot;:true,&quot;flow-children&quot;:&quot;row&quot;}" class="sectionTabs item responsive_hidden">
+					<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2744782412"  class="sectionTab  active description"><span>Descrizione</span></a>
+					<a href="https://steamcommunity.com/sharedfiles/filedetails/discussions/2744782412"  class="sectionTab  discussions"><span>Discussioni<span class="tabCount">0</span></span></a>
+					<a href="https://steamcommunity.com/sharedfiles/filedetails/comments/2744782412"  class="sectionTab  comments"><span>Commenti<span class="tabCount">48</span></span></a>
+					<a href="https://steamcommunity.com/sharedfiles/filedetails/changelog/2744782412"  class="sectionTab  changelog"><span>Note di rilascio</span></a>
+			</div>
+
+	<div class="nonresponsive_hidden responsive_tab_ctn sharedfiles_responsive_tab">
+		<div class="responsive_tab_control">
+						<select class="responsive_tab_select" id="responsive_tab_select670bf204a16cd">
+									<option value="https://steamcommunity.com/sharedfiles/filedetails/?id=2744782412" selected>
+						Descrizione					</option>
+									<option value="https://steamcommunity.com/sharedfiles/filedetails/discussions/2744782412" >
+						Discussioni					</option>
+									<option value="https://steamcommunity.com/sharedfiles/filedetails/comments/2744782412" >
+						Commenti					</option>
+									<option value="https://steamcommunity.com/sharedfiles/filedetails/changelog/2744782412" >
+						Note di rilascio					</option>
+							</select>
+		</div>
+	</div>
+
+	<div id="tabs_baseline" class="responsive_tab_baseline "></div>
+
+			<div style="clear: left"></div>
+	
+	<div class="workshopItemPreviewArea ">
+		<div class="workshop_item_header">
+			<div class="highlight_ctn">
+				<div class="highlight_overflow">
+					
+					<div class="workshopItemPreviewImageEnlargeableContainer ">
+						<div id="highlight_player_area">
+															<div class="highlight_player_item highlight_screenshot" id="highlight_screenshot_28114842" style="display: none;">
+									<div class="screenshot_holder">
+										<a data-panel="{&quot;focusable&quot;:false}" onclick="ShowEnlargedImagePreviewFromHighlightPlayer( '28114842', g_HighlightPlayer );"><img id="previewImage28114842" class="workshopItemPreviewImageEnlargeable" src="https://community.akamai.steamstatic.com/public/images/trans.gif"><span class="zoom-icon"><img src="https://community.akamai.steamstatic.com/public/images/sharedfiles/zoom_icon.png"></span></a>
+									</div>
+								</div>
+																<div class="highlight_player_item highlight_screenshot" id="highlight_screenshot_28114846" style="display: none;">
+									<div class="screenshot_holder">
+										<a data-panel="{&quot;focusable&quot;:false}" onclick="ShowEnlargedImagePreviewFromHighlightPlayer( '28114846', g_HighlightPlayer );"><img id="previewImage28114846" class="workshopItemPreviewImageEnlargeable" src="https://community.akamai.steamstatic.com/public/images/trans.gif"><span class="zoom-icon"><img src="https://community.akamai.steamstatic.com/public/images/sharedfiles/zoom_icon.png"></span></a>
+									</div>
+								</div>
+								
+							<script type="text/javascript">
+								var rgMovieFlashvars = {
+																	'' : ''
+								};
+								var rgCommonFlashVars = {
+									clientLanguage: "italian",
+									capsuleSize: "huge",
+									STAGE_WIDTH: 636,
+									STAGE_HEIGHT: 358,
+									AUTO_PLAY: "true",
+									ALLOW_JSPAUSE: "true",
+									TRACK_MUTE: "true",
+									CHECKBOX_AUTOPLAY_SHOW: "true",
+									CHECKBOX_AUTOPLAY_TEXT: ""
+								};
+								var rgScreenshotURLs = {
+																		'28114842': 'https://steamuserimages-a.akamaihd.net/ugc/1857188145050365568/B3FB9E51F6D1F9475FE3CC8EAEA6E31B21D8AF2C/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true',
+																		'28114846': 'https://steamuserimages-a.akamaihd.net/ugc/1857188145050367438/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true',
+																		'' : ''
+								};
+								var rgFullScreenshotURLs = [
+																	{ 'previewid' : '28114842', 'url': 'https://steamuserimages-a.akamaihd.net/ugc/1857188145050365568/B3FB9E51F6D1F9475FE3CC8EAEA6E31B21D8AF2C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false' },
+																	{ 'previewid' : '28114846', 'url': 'https://steamuserimages-a.akamaihd.net/ugc/1857188145050367438/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false' },
+																];
+								var rgSketchfabModels = {
+																		'' : ''
+								};
+							</script>
+						</div>
+					</div>
+													<div id="highlight_strip_bg">
+									<div id="highlight_strip">
+										<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" id="highlight_strip_scroll" style="width: 242px;">
+											<div class="highlight_selector"></div>
+																								<div data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" class="highlight_strip_item highlight_strip_screenshot" id="thumb_screenshot_28114842" >
+														<img src="https://steamuserimages-a.akamaihd.net/ugc/1857188145050365568/B3FB9E51F6D1F9475FE3CC8EAEA6E31B21D8AF2C/?imw=116&imh=65&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true">
+													</div>
+																										<div data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" class="highlight_strip_item highlight_strip_screenshot" id="thumb_screenshot_28114846" >
+														<img src="https://steamuserimages-a.akamaihd.net/ugc/1857188145050367438/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=116&imh=65&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true">
+													</div>
+																							</div>
+									</div>
+												<div>
+							<div class="slider" id="highlight_slider" >
+								<div class="slider_bg">
+								</div>
+								<div class="handle">
+								</div>
+							</div>
+						</div>
+
+								</div>
+											</div>
+
+					<div class="workshopItemControls" id="ItemControls">
+		<div class="workshopItemRatings">
+						<div class="review_award_ctn">
+							</div>
+		</div>
+		<div class="workshopItemControlCtn">
+							<span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onclick="VoteUp(2744782412);" id="VoteUpBtn" class="general_btn voteUp ">&nbsp;</span>
+				<span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onclick="VoteDown(2744782412);" id="VoteDownBtn" class="general_btn voteDown ">&nbsp;</span>
+					</div>
+
+		<span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onClick="PublishedFileAward( '2744782412', 0 )" class="general_btn"><span><img src="https://community.akamai.steamstatic.com/public/shared/images//award_icon.svg" class="reward_btn_icon">Premio</span></span>
+
+		
+		<div class="workshopItemControlCtn">
+			<span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onclick="FavoriteItem();" id="FavoriteItemBtn" class="general_btn favorite tooltip " data-tooltip-text="Ritrova facilmente questo oggetto più tardi">
+				<div class="favoriteText">
+					<div id="FavoriteItemOptionAdd" class="favoriteOption addfavorite selected">Aggiungi ai preferiti</div>
+					<div id="FavoriteItemOptionFavorited" class="favoriteOption favorited ">Preferito</div>
+					<div class="favoriteOption removefavorite">Rimuovi dai preferiti</div>
+				</div>
+			</span>
+
+			
+						<span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onclick="ShowSharePublishedFilePopup( '2744782412', '494840' );" id="ShareItemBtn" class="general_btn share tooltip" data-tooltip-text="Condividi questo oggetto su Steam o sul tuo social network preferito">Condividi</span>
+					</div>
+
+					<div class="workshopItemControlCtn">
+				<span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onclick="ShowAddToCollection( '2744782412', '494840' );" id="AddToCollectionBtn" class="general_btn share tooltip" data-tooltip-text="Aggiungi ad una tua collezione">
+					<span>Aggiungi alla collezione</span>
+				</span>
+			</div>
+		
+		
+		<div class="vertical_divider"></div>
+
+					<div class="workshopItemControlCtn">
+				<span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onclick="ReportItem();" id="ReportItemBtn" class="general_btn report tooltip " data-tooltip-text="Segnala questo oggetto per violazione delle norme di condotta online di Steam"></span>
+			</div>
+		
+		
+				<div id="action_wait" style="display: none;"><img src="https://community.akamai.steamstatic.com/public/images/login/throbber.gif"></div>
+	</div>
+
+	
+	<div id="JustFavorited" class="just_added_to_list" style="display: none">
+		<div class="just_added_favorite_icon"></div>
+		<div class="just_added_text">Questo oggetto è stato aggiunto ai tuoi <a href="https://steamcommunity.com/my/myworkshopfiles/?browsefilter=myfavorites">preferiti</a>.</div>
+		<div class="close_notification"><span data-panel="{&quot;focusable&quot;:true,&quot;clickOnActivate&quot;:true}" onclick="CloseNotification( 'JustFavorited' );" class="close"><img src="https://community.akamai.steamstatic.com/public/images/sharedfiles/ico_dialogue_close.png"></span></div>
+		<div style="clear:both"></div>
+	</div>			</div>
+
+			<div class="col_right responsive_local_menu">
+									<div class="workshopItemPreviewImageMain">
+						<a data-panel="{&quot;focusable&quot;:false}" onclick="ShowEnlargedImagePreview( 'https://steamuserimages-a.akamaihd.net/ugc/1835782295716737450/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false' );">
+							<img id="previewImageMain" class="workshopItemPreviewImageMain" src="https://steamuserimages-a.akamaihd.net/ugc/1835782295716737450/E80AB67C848478A986B51068F9D96ACCBB69CFE0/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"/>
+							<span class="zoom-icon"><img src="https://community.akamai.steamstatic.com/public/images/sharedfiles/zoom_icon.png"></span>
+						</a>
+					</div>
+					
+				
+				<div class="dotted_hr_uri hr padded"></div>
+
+				<div class="rightDetailsBlock">
+					<div class="detailsStatsContainerLeft">
+												<div class="detailsStatLeft">Dimensioni del file</div>
+												<div class="detailsStatLeft">Pubblicato in data</div>
+												<div class="detailsStatLeft">Aggiornato in data</div>
+																		
+					</div>
+					<div class="detailsStatsContainerRight">
+												<div class="detailsStatRight">556.130 KB</div>
+												<div class="detailsStatRight">6 feb 2022, ore 1:56</div>
+												<div class="detailsStatRight">8 ago, ore 8:47</div>
+																							</div>
+					<div style="clear:left"></div>
+										<div class="detailsStatNumChangeNotes">
+						5 note di rilascio						<span class="change_note_link"><a href="https://steamcommunity.com/sharedfiles/filedetails/changelog/2744782412">( visualizza )</a></span>
+					</div>
+					
+					
+				</div>
+			</div>
+
+			<div style="clear:both"></div>
+		</div>
+
+				
+	</div>
+
+	
+	<div id="sharedfiles_content_ctn" data-miniprofile-appid="494840">
+
+	<!-- right side contents -->
+	<div id="rightContents" class="responsive_local_menu">
+		<div class="sidebar">
+				
+		<!-- created by -->
+		<div class="panel">
+			
+<div class="rightSectionTopTitle condensed">Creato da</div>
+<div class="rightDetailsBlock">
+	<div class="creatorsBlock">
+				<div data-panel="{&quot;flow-children&quot;:&quot;column&quot;}" class="friendBlock persona offline" data-miniprofile="366496913" >
+						<a class="friendBlockLinkOverlay" href="https://steamcommunity.com/profiles/76561198326762641"></a>
+															<div class="playerAvatar offline">
+				<img src="https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525_medium.jpg">
+			</div>
+			<div class="friendBlockContent">
+				Wangtze<br>
+				<span class="friendSmallText">
+		Offline
+				</span>
+			</div>
+		</div>
+			</div>
+</div>
+
+
+			
+
+
+
+		</div>
+
+			<div class="panel">
+			<div class="parentCollectionsNumOthers">Guarda tutte e <a href="https://steamcommunity.com/workshop/browse/?browsesort=toprated&section=collections&appid=494840&childpublishedfileid=2744782412">38 le collezioni</a> (alcune potrebbero essere nascoste)</div>
+	 </div> 	<div class="panel">
+			<table class="stats_table">
+								<tr>
+					<td>8,404</td>
+					<td>Visite uniche</td>
+				</tr>
+													<tr>
+						<td>975</td>
+						<td>Sottoscrittori</td>
+					</tr>
+								<tr>
+					<td>108</td>
+					<td>Preferiti</td>
+				</tr>
+			</table>
+	</div>
+			<!-- favorited by -->
+					</div>
+	</div>
+
+	<div id="profileBlock" class="clearfix">
+		<div class="detailBox plain">
+
+			
+								<div class="game_area_purchase_margin">
+						<div class="game_area_purchase_game">
+							<h1><span>Sottoscrivi per scaricare</span><br>[2024.1] Better ASDIC</h1>
+							<div>
+								<a onclick="SubscribeItem( '2744782412', '494840' );" id="SubscribeItemBtn" class="btn_green_white_innerfade btn_border_2px btn_medium ">
+									<div class="subscribeIcon"></div>
+									<span class="subscribeText">
+										<div id="SubscribeItemOptionAdd" class="subscribeOption subscribe selected">Sottoscrivi</div>
+										<div id="SubscribeItemOptionSubscribed" class="subscribeOption subscribed ">Sottoscritto</div>
+										<div class="subscribeOption remove">Annulla sottoscrizione</div>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div id="JustSubscribed" class="just_added_to_list body" style="display: none">
+						<div class="close_notification"><a onclick="CloseNotification( 'JustSubscribed' );"><img src="https://community.akamai.steamstatic.com/public/images/sharedfiles/ico_dialogue_close.png"></a></div>
+						<div style="float: left">
+							<div class="just_subscribed_icon"></div>
+							<div class="just_added_text" style="width: 400px;">Questo oggetto è stato aggiunto alle tue <a href="https://steamcommunity.com/my/myworkshopfiles/?browsefilter=mysubscriptions">sottoscrizioni</a>. Alcuni giochi ti chiederanno di essere riavviati prima che l'oggetto venga scaricato.</div>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+					
+						
+			<div class="detailBox altFooter">
+				<div class="workshopItemDescriptionTitle">Descrizione</div>
+								<div class="workshopItemDescription" id="highlightContent">Better ASDIC - not savegame compatible, you have to start a new game to enable the mod!<br><br>Warships are using ASDIC more effective, particularly under hard AI stettings (recommended for this mod).<br><br>You will hear more sonar pings. <br><br>Detection by Warships will be more accurate! <br><br>Depth Charges will be droped more precice on your position! &quot;beste Chancen zum Absaufen!&quot;<br><br><br>Be careful, surviving will be very hard! (this mod is particularly for hard-core gamers!)</div>
+			</div>
+
+			
+<script>
+
+</script>
+<div class="detailBox"><script type="text/javascript">
+	$J( function() {
+		InitializeCommentThread( "PublishedFile_Public", "PublishedFile_Public_76561198326762641_2744782412", {"feature":"2744782412","feature2":-1,"owner":"76561198326762641","total_count":48,"start":0,"pagesize":10,"has_upvoted":0,"upvotes":0,"votecountid":null,"voteupid":null,"commentcountid":null,"subscribed":false,"extended_data":"{\"contributors\":[\"76561198326762641\",{}],\"appid\":494840,\"sharedfile\":{\"m_parentsDetails\":null,\"m_parentBundlesDetails\":null,\"m_bundledChildren\":[],\"m_ownedBundledItems\":[]},\"parent_item_reported\":false}"}, 'https://steamcommunity.com/comment/PublishedFile_Public/', 40 );
+	} );
+</script>
+<div class="commentthread_area"  id="commentthread_PublishedFile_Public_76561198326762641_2744782412_area">
+	<div class="commentthread_header">
+		<div class="commentthread_header_and_count">
+			<span class="ellipsis commentthread_count_label">
+									<span id="commentthread_PublishedFile_Public_76561198326762641_2744782412_totalcount">48</span> commenti							</span>
+			<div class="commentthread_count">
+							</div>
+		</div>
+		<div class="commentthread_paging " id="commentthread_PublishedFile_Public_76561198326762641_2744782412_pagecontrols">
+						<div class="commentthread_pagelinks_ctn">
+				<a id="commentthread_PublishedFile_Public_76561198326762641_2744782412_pagebtn_prev" href="javascript:void(0);" class="pagebtn">&lt;</a>
+				<span id="commentthread_PublishedFile_Public_76561198326762641_2744782412_pagelinks" class="commentthread_pagelinks"></span>
+				<span id="commentthread_PublishedFile_Public_76561198326762641_2744782412_pagedropdown" class="commentthread_pagedropdown"></span>
+				<a id="commentthread_PublishedFile_Public_76561198326762641_2744782412_pagebtn_next" href="javascript:void(0);" class="pagebtn">&gt;</a>
+			</div>
+		</div>
+	</div>
+				<!-- 15 -->
+				<div style="" class="commentthread_comment_container" id="commentthread_PublishedFile_Public_76561198326762641_2744782412_postcontainer">
+			<div class="commentthread_comments" id="commentthread_PublishedFile_Public_76561198326762641_2744782412_posts">
+						
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4853281214104096234" style="">
+				<div class="commentthread_comment_avatar playerAvatar online">
+						<a href="https://steamcommunity.com/id/ImAtJoeMamasHouse" data-miniprofile="1350201473">
+									<img src="https://avatars.akamai.steamstatic.com/9e26400e768cb354e99f75564ac6e68e0b92b41e.jpg" srcset="https://avatars.akamai.steamstatic.com/9e26400e768cb354e99f75564ac6e68e0b92b41e.jpg 1x, https://avatars.akamai.steamstatic.com/9e26400e768cb354e99f75564ac6e68e0b92b41e_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/id/ImAtJoeMamasHouse"  data-miniprofile="1350201473">
+					<bdi>ImTheFirstJonathan</bdi></a>
+
+				
+				
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="21 settembre 2024, ore 20:04:10 PDT" data-timestamp="1726974250">
+					21 set, ore 20:04&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4853281214104096234">
+				Not really realistic just hardcore, good luck to ya'll<br>ig			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4429940312358984657" style="">
+				<div class="commentthread_comment_avatar playerAvatar online">
+						<a href="https://steamcommunity.com/profiles/76561198053483911" data-miniprofile="93218183">
+									<img src="https://avatars.akamai.steamstatic.com/68bf4dae321e018a8be064256e4cf4b73e1e5c1b.jpg" srcset="https://avatars.akamai.steamstatic.com/68bf4dae321e018a8be064256e4cf4b73e1e5c1b.jpg 1x, https://avatars.akamai.steamstatic.com/68bf4dae321e018a8be064256e4cf4b73e1e5c1b_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198053483911"  data-miniprofile="93218183">
+					<bdi>Niko_Dragovich</bdi></a>
+
+				
+				
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="24 agosto 2024, ore 16:06:23 PDT" data-timestamp="1724540783">
+					24 ago, ore 16:06&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4429940312358984657">
+				Same problem than mosene281. I'm spotted too easily... I'm on the bottom of the sea (~100m), full silent mode, night time, they spotted me at 4km with ASDIC... <br>And when I'm spotted and I try to escape, if I try to move to left or right or going deeper, i'm instantly spotted again...			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4517759189408171502" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198003946507" data-miniprofile="43680779">
+									<img src="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg" srcset="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg 1x, https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198003946507"  data-miniprofile="43680779">
+					<bdi>mosene281</bdi></a>
+
+				
+				
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="11 agosto 2024, ore 3:08:33 PDT" data-timestamp="1723370913">
+					11 ago, ore 3:08&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4517759189408171502">
+				I tried it but its a bit unrealistic. They can find me even when im on the sea floor and the asdic feels like its 180* for them. In vanilla the problem was not that they cant find you but the unrealistic use of their depth charges. They get a position and 3 destroyer just drop what feels like 1/3 of their amo there, they do that 3 times and then they are uselees. thats what needs to change, the way the use the DC their accuracy and amo usage.			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4517758984074810097" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198326762641" data-miniprofile="366496913">
+									<img src="https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525.jpg" srcset="https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525.jpg 1x, https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198326762641"  data-miniprofile="366496913">
+					<bdi>Wangtze</bdi></a>
+
+				
+				<span class="commentthread_workshop_authorbadge">&nbsp;[autore]</span>
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="9 agosto 2024, ore 9:25:32 PDT" data-timestamp="1723220732">
+					9 ago, ore 9:25&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4517758984074810097">
+				@metalhead needs a new campaign			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4517758984074784226" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198070114616" data-miniprofile="109848888">
+									<img src="https://avatars.akamai.steamstatic.com/771f85d35fc712a41fa1570bc283c8e427ff000f.jpg" srcset="https://avatars.akamai.steamstatic.com/771f85d35fc712a41fa1570bc283c8e427ff000f.jpg 1x, https://avatars.akamai.steamstatic.com/771f85d35fc712a41fa1570bc283c8e427ff000f_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198070114616"  data-miniprofile="109848888">
+					<bdi>metalhead</bdi></a>
+
+				
+				
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="9 agosto 2024, ore 9:15:27 PDT" data-timestamp="1723220127">
+					9 ago, ore 9:15&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4517758984074784226">
+				Is it save compatible or needs a new campaign?			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4517758984073064506" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198326762641" data-miniprofile="366496913">
+									<img src="https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525.jpg" srcset="https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525.jpg 1x, https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198326762641"  data-miniprofile="366496913">
+					<bdi>Wangtze</bdi></a>
+
+				
+				<span class="commentthread_workshop_authorbadge">&nbsp;[autore]</span>
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="8 agosto 2024, ore 22:02:11 PDT" data-timestamp="1723179731">
+					8 ago, ore 22:02&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4517758984073064506">
+				@mosene281 yes, it's changed so it's a real challange :)			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4517758984071991845" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198003946507" data-miniprofile="43680779">
+									<img src="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg" srcset="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg 1x, https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198003946507"  data-miniprofile="43680779">
+					<bdi>mosene281</bdi></a>
+
+				
+				
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="8 agosto 2024, ore 15:00:17 PDT" data-timestamp="1723154417">
+					8 ago, ore 15:00&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4517758984071991845">
+				Did you changed the width of the asdic? i know it was 30 before			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4517758984070658496" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198326762641" data-miniprofile="366496913">
+									<img src="https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525.jpg" srcset="https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525.jpg 1x, https://avatars.akamai.steamstatic.com/b2774b37f9c011f0b3f6ad6371af1d91e1667525_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198326762641"  data-miniprofile="366496913">
+					<bdi>Wangtze</bdi></a>
+
+				
+				<span class="commentthread_workshop_authorbadge">&nbsp;[autore]</span>
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="8 agosto 2024, ore 6:22:05 PDT" data-timestamp="1723123325">
+					8 ago, ore 6:22&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4517758984070658496">
+				@mosene281 yes an update will come soon, maybe today evening			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_4517758984070579596" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198003946507" data-miniprofile="43680779">
+									<img src="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg" srcset="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg 1x, https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198003946507"  data-miniprofile="43680779">
+					<bdi>mosene281</bdi></a>
+
+				
+				
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="8 agosto 2024, ore 5:51:15 PDT" data-timestamp="1723121475">
+					8 ago, ore 5:51&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_4517758984070579596">
+				Hello, is this mod gonna be updated in the near future?			</div>
+								</div>
+			</div>
+		
+	
+	<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;,&quot;type&quot;:&quot;PanelGroup&quot;}" class="commentthread_comment responsive_body_text   " id="comment_3499887553428329147" style="">
+				<div class="commentthread_comment_avatar playerAvatar offline">
+						<a href="https://steamcommunity.com/profiles/76561198072122609" data-miniprofile="111856881">
+									<img src="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg" srcset="https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb.jpg 1x, https://avatars.akamai.steamstatic.com/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg 2x">							</a>
+		</div>
+		<div class="commentthread_comment_content">
+			<div data-panel="{&quot;flow-children&quot;:&quot;row&quot;}" class="commentthread_comment_author">
+				<a class="hoverunderline commentthread_author_link" href="https://steamcommunity.com/profiles/76561198072122609"  data-miniprofile="111856881">
+					<bdi>AlexFoyle</bdi></a>
+
+				
+				
+				
+				
+				
+				<span class="commentthread_comment_timestamp" title="8 novembre 2022, ore 11:01:39 PDT" data-timestamp="1667934099">
+					8 nov 2022, ore 11:01&nbsp;
+				</span>
+								<div class="commentthread_comment_actions" >
+									</div>
+			</div>
+			<div class="commentthread_comment_text" id="comment_content_3499887553428329147">
+				@Tenderkaj put silent gyro and dive planes under in the mod list.<br><br>In any case, this mod lowers gyro and planes noise so much they're basically silent anyway lol			</div>
+								</div>
+			</div>
+			</div>
+		</div>
+		<div class="commentthread_footer" id="commentthread_PublishedFile_Public_76561198326762641_2744782412_fpagecontrols">
+			<div class="commentthread_paging" id="commentthread_PublishedFile_Public_76561198326762641_2744782412_fpagecontrols">
+				<a id="commentthread_PublishedFile_Public_76561198326762641_2744782412_fpagebtn_prev" href="javascript:void(0);" class="pagebtn">&lt;</a>
+				<span id="commentthread_PublishedFile_Public_76561198326762641_2744782412_fpagelinks" class="commentthread_pagelinks"></span>
+				<span id="commentthread_PublishedFile_Public_76561198326762641_2744782412_fpagedropdown" class="commentthread_pagedropdown"></span>
+				<a id="commentthread_PublishedFile_Public_76561198326762641_2744782412_fpagebtn_next" href="javascript:void(0);" class="pagebtn">&gt;</a>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div></div> 		</div>
+	</div>
+
+	</div>
+
+</div>
+
+<div id="previewImageEnlarged" class="modal_frame_image" style="display:none;">
+	<div class="modal_box_preview_image">
+		<div class="modal_close_image"><a onclick="hideModal( 'previewImageEnlarged' );"><img src="https://community.akamai.steamstatic.com/public/images/x9x9.gif" width="9" height="9" border="0" alt="Chiudi" /></a></div>
+		<div><img id="enlargedImage" src="https://community.akamai.steamstatic.com/public/images/trans.gif"></div>
+	</div>
+</div>
+
+<div id="ShareOnSteamDialog" style="display: none">
+	<div id="ShareOnSteamDialogContents"></div>
+</div>
+
+<div id="SharePopup" style="display: none">
+	<div class="share_ctn">
+		<a class="share_controls_steam" onclick="ShareOnSteam();">
+			<span>Condividi sul tuo feed delle attività di Steam</span>
+		</a>
+		<div class="share_controls_other">
+			<div class="shareItemLink"><a class="btn_grey_black btn_medium" id="SharePopupLink_Facebook" href="" title="Condividi su Facebook"><span><img src="https://community.akamai.steamstatic.com/public/images//social/facebook_large.png"></span></a></div>
+			<div class="shareItemLink"><a class="btn_grey_black btn_medium" id="SharePopupLink_Twitter" href="" title="Condividi su Twitter"><span><img src="https://community.akamai.steamstatic.com/public/images//social/twitter_large.png"></span></a></div>
+			<div class="shareItemLink"><a class="btn_grey_black btn_medium" id="SharePopupLink_Reddit" href="" title="Condividi su Reddit"><span><img src="https://community.akamai.steamstatic.com/public/images//social/reddit_large.png"></span></a></div>
+		</div>
+		<div style="clear: left"></div>
+	</div>
+	<div class="share_controls_divider"></div>
+	<div class="share_controls_page_link">
+		<form onsubmit="return false;">
+			Link:&nbsp;<input type="input" id="SharePopupInput" value="" readonly="readonly" >
+		</form>
+	</div>
+</div>	<div id="NotLoggedInWarning" class="modal_frame" style="display: none">
+		<div class="modal_box">
+			<div class="modal_box_ctn">
+				<div class="notLoggedInText">Devi effetture l'accesso o creare un account per farlo.</div>
+				<div class="notLoggedInButtons">
+					<a class="btn_green_white_innerfade btn_medium" href="https://steamcommunity.com/login/home/?goto=sharedfiles%2Ffiledetails%2F%3Fid%3D2744782412%26insideModal%3D0%26requirelogin%3D1"><span>Accedi</span></a>
+					<a class="btn_green_white_innerfade btn_medium" href="https://store.steampowered.com/join"><span>Crea un account</span></a>
+					<a class="btn_grey_black btn_medium" onclick="hideModal( 'NotLoggedInWarning' )"><span>Annulla</span></a>
+					<div style="clear: left"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div id="updateKVTagsFormModal" class="modal_frame_tags" style="display:none;">
+		<div class="modal_top_band">
+			<div class="modal_close"><a onclick="hideModal( 'updateKVTagsFormModal' )"><img src="https://community.akamai.steamstatic.com/public/images/x9x9.gif" width="9" height="9" border="0" alt="Chiudi" /></a></div>
+		</div>
+		<div class="modal_box">
+			<div class="updateKVTagsForm" id="updateKVTagsForm">
+				<script>
+					function UpdateKVTags()
+					{
+						$('KVTagsUpdateForm').submit();
+					}
+				</script>
+				<h2>Modifica collegamenti</h2>
+				<form class="smallForm" method="POST" name="KVTagsUpdateForm" id="KVTagsUpdateForm" action="https://steamcommunity.com/workshop/updatekvtags/" >
+					<input type="hidden" name="id" value="2744782412" />
+					<input type="hidden" name="sessionid" value="7d262d5edb73f3c1521f4ff2" />
+													<div class="box">
+									<div class="itemBulletArrow"></div>
+									<div class="title">Su Facebook</div>
+									<p class="description">Inserisci l'URL completo della pagina di Facebook del tuo oggetto o gruppo</p>
+									<input type="text" class="titleField" name="facebook" value="">
+								</div>
+															<div class="box">
+									<div class="itemBulletArrow"></div>
+									<div class="title">Su Twitter</div>
+									<p class="description">Inserisci l'URL completo della pagina di Twitter del tuo oggetto o gruppo</p>
+									<input type="text" class="titleField" name="twitter" value="">
+								</div>
+															<div class="box">
+									<div class="itemBulletArrow"></div>
+									<div class="title">Su Youtube</div>
+									<p class="description">Se hai un canale di Youtube correlato, inserisci l'URL.</p>
+									<input type="text" class="titleField" name="youtube" value="">
+								</div>
+															<div class="box">
+									<div class="itemBulletArrow"></div>
+									<div class="title">Su Polycount</div>
+									<p class="description">Inserisci l'URL completo della pagina di Polycount del tuo oggetto o gruppo</p>
+									<input type="text" class="titleField" name="polycount" value="">
+								</div>
+															<div class="box">
+									<div class="itemBulletArrow"></div>
+									<div class="title">Su Reddit</div>
+									<p class="description">Inserisci l'URL completo della pagina di Reddit del tuo oggetto o gruppo</p>
+									<input type="text" class="titleField" name="reddit" value="">
+								</div>
+															<div class="box">
+									<div class="itemBulletArrow"></div>
+									<div class="title">Su Sketchfab</div>
+									<p class="description">Inserisci l'URL completo del tuo oggetto o della pagina di Sketchfab del gruppo</p>
+									<input type="text" class="titleField" name="sketchfab" value="">
+								</div>
+												<a class="btn_green_white_innerfade btn_medium button" href="javascript:UpdateKVTags();"><span>Aggiorna</span></a>
+
+					<div style="clear:both"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<div id="PromptModal" class="modal_frame_tags" style="display:none;">
+	<div class="modal_top_band">
+		<div class="modal_close"><a onclick="hideModal( 'PromptModal' )"><img src="https://community.akamai.steamstatic.com/public/images/x9x9.gif" width="9" height="9" border="0" alt="Chiudi" /></a></div>
+	</div>
+	<div class="modal_box">
+		<div class="updateKVTagsForm" id="PromptModalFormDiv">
+			<script>
+				function UpdateKVTagsSingle()
+				{
+					$('PromptModalForm').submit();
+				}
+			</script>
+			<form class="smallForm" method="POST" name="KVTagsUpdateFormSingle" id="PromptModalForm" action="https://steamcommunity.com/workshop/updatekvtags/" >
+				<input type="hidden" name="id" value="2744782412" />
+				<input type="hidden" name="sessionid" value="7d262d5edb73f3c1521f4ff2" />
+
+				<div class="box">
+					<div class="itemBulletArrow"></div>
+					<div class="title" id="PromptTitle"></div>
+					<p class="description" id="PromptDescription"></p>
+					<input type="text" class="titleField" name="value" id="PromptValue">
+				</div>
+
+
+				<a class="btn_green_white_innerfade btn_medium button" href="javascript:UpdateKVTagsSingle();"><span>Aggiorna</span></a>
+
+				<div style="clear:both"></div>
+			</form>
+		</div>
+	</div>
+</div>
+		</div>	<!-- responsive_page_legacy_content -->
+
+				<script>
+			RecordAppImpression( 494840, '2_100100_100101_100103' );
+		</script>
+			<div id="footer_spacer" class=""></div>
+	<div id="footer_responsive_optin_spacer"></div>
+	<div id="footer">
+					<div class="footer_content">
+				<span id="footerLogo"><img src="https://community.akamai.steamstatic.com/public/images/skin_1/footerLogo_valve.png?v=1" width="96" height="26" border="0" alt="Logo Valve" /></span>
+				<span id="footerText">
+					&copy; Valve Corporation. Tutti i diritti riservati. Tutti i marchi appartengono ai rispettivi proprietari negli Stati Uniti e in altri Paesi. Alcuni dati geospaziali su questo sito sono forniti da <a href="https://steamcommunity.com/linkfilter/?u=http%3A%2F%2Fwww.geonames.org" target="_blank" rel=" noopener">geonames.org</a>.					<br>
+											<span class="valve_links">
+							<a href="http://store.steampowered.com/privacy_agreement/" target="_blank">Informativa sulla privacy</a>
+							&nbsp; | &nbsp;<a href="https://store.steampowered.com/legal/" target="_blank">Informazioni legali</a>
+							&nbsp;| &nbsp;<a href="http://store.steampowered.com/subscriber_agreement/" target="_blank">Contratto di sottoscrizione a Steam</a>
+                            &nbsp;| &nbsp;<a href="http://store.steampowered.com/account/cookiepreferences/" target="_blank">Cookie</a>
+						</span>
+									</span>
+			</div>
+							<div class="responsive_optin_link">
+				<div class="btn_medium btnv6_grey_black" onclick="Responsive_RequestMobileView()">
+					<span>Visualizza il sito web per dispositivi mobili</span>
+				</div>
+			</div>
+			</div>
+	
+	</div>	<!-- responsive_page_content -->
+
+</div>	<!-- responsive_page_frame -->
+</body>
+</html>
